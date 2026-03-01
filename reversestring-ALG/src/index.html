@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reverse String</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <main class="card">
+    <h1>Reverse String</h1>
+    <p class="subtitle">Type something and see it reversed instantly ✨</p>
+
+    <label for="txtInput">Enter text</label>
+    <input
+      type="text"
+      id="txtInput"
+      class="input"
+      placeholder="e.g. Hello world!"
+      autocomplete="off"
+    />
+
+    <button id="btnReverse" class="btn" type="button">
+      <span>Reverse</span>
+      <span aria-hidden="true">🔁</span>
+    </button>
+
+    <section class="result" aria-live="polite">
+      <p class="resultTitle">Reversed <span aria-hidden="true">🪄</span></p>
+      <div id="output"></div>
+
+      <!-- ✅ Nuevo: Botón copiar (debajo del resultado) -->
+      <button id="btnCopy" class="btn btn-secondary" type="button">
+        <span>Copy</span>
+        <span aria-hidden="true">📋</span>
+      </button>
+
+      <!-- ✅ Nuevo: Mensaje de estado (copiado/error) -->
+      <div id="copyStatus" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <div class="hint">Tip: Press <b>Enter</b> to reverse too.</div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

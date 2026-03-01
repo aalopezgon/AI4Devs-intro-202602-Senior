@@ -1,0 +1,162 @@
+:root{
+  --bg1:#0ea5e9;
+  --bg2:#8b5cf6;
+  --card: rgba(255,255,255,.12);
+  --cardBorder: rgba(255,255,255,.22);
+  --white: #ffffff;
+  --muted: rgba(255,255,255,.80);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(255,255,255,.35), transparent 55%),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+.card{
+  width: min(560px, 100%);
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 18px 60px rgba(2, 6, 23, .35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--white);
+}
+
+h1{
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+label{
+  display:block;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.input{
+  width:100%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.16);
+  color: var(--white);
+  outline: none;
+  transition: transform .08s ease, border-color .2s ease, background .2s ease;
+}
+
+.input::placeholder{ color: rgba(255,255,255,.75); }
+
+.input:focus{
+  border-color: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+
+.btn{
+  width:100%;
+  margin-top: 12px;     /* botón debajo del input */
+  padding: 12px 16px;
+  border-radius: 18px;  /* redondeado */
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: #0b1220;
+  background: linear-gradient(180deg, #ffffff, rgba(255,255,255,.88));
+  box-shadow: 0 10px 24px rgba(2, 6, 23, .25);
+  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(2, 6, 23, .30);
+}
+
+.btn:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 20px rgba(2, 6, 23, .22);
+  opacity: .95;
+}
+
+.result{
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 18px; /* redondeado */
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.resultTitle{
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: rgba(255,255,255,.92);
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+
+#output{
+  font-size: 1.05rem;
+  word-break: break-word;
+  min-height: 1.2em;
+  color: rgba(255,255,255,.96);
+}
+
+.hint{
+  margin-top: 10px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.75);
+}
+
+/* --- Botón secundario (Copy) --- */
+.btn-secondary{
+  margin-top: 12px;
+  background: rgba(255,255,255,.14);
+  color: rgba(255,255,255,.95);
+  border: 1px solid rgba(255,255,255,.30);
+  box-shadow: none;
+}
+
+.btn-secondary:hover{
+  background: rgba(255,255,255,.20);
+  box-shadow: 0 10px 20px rgba(2, 6, 23, .18);
+}
+
+.btn:disabled{
+  cursor: not-allowed;
+  opacity: .6;
+  transform: none !important;
+}
+
+/* --- Mensaje de estado (copiado/error) --- */
+.status{
+  margin-top: 10px;
+  font-size: .9rem;
+  color: rgba(255,255,255,.85);
+  min-height: 1.1em; /* reserva espacio para evitar saltos */
+}
+.status.success{ color: rgba(209, 250, 229, .95); } /* verdoso */
+.status.error{ color: rgba(254, 202, 202, .95); }   /* rojizo */
